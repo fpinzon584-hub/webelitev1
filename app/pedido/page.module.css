@@ -15,7 +15,15 @@
 }
 
 .icon {
-  font-size: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-xl);
+  background: rgba(217, 181, 110, 0.10);
+  border: 1px solid var(--border-primary);
+  color: var(--color-primary);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -40,6 +48,9 @@
 }
 
 .feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-lg);
   background: var(--bg-card);
@@ -48,6 +59,11 @@
   color: var(--text-secondary);
   text-align: left;
   transition: all var(--transition-base);
+}
+
+.feature svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .feature:hover {

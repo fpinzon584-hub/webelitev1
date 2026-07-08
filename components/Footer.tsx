@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Footer.module.css'
+import { InstagramIcon, WhatsappIcon, FacebookIcon, TiktokIcon, SparkleIcon } from './Icons'
 
 const footerLinks = {
   empresa: [
@@ -20,10 +21,10 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { href: 'https://instagram.com', label: 'Instagram', icon: '📸' },
-  { href: 'https://wa.me/', label: 'WhatsApp', icon: '💬' },
-  { href: 'https://facebook.com', label: 'Facebook', icon: '👥' },
-  { href: 'https://tiktok.com', label: 'TikTok', icon: '🎵' },
+  { href: 'https://instagram.com', label: 'Instagram', Icon: InstagramIcon },
+  { href: 'https://wa.me/', label: 'WhatsApp', Icon: WhatsappIcon },
+  { href: 'https://facebook.com', label: 'Facebook', Icon: FacebookIcon },
+  { href: 'https://tiktok.com', label: 'TikTok', Icon: TiktokIcon },
 ]
 
 export default function Footer() {
@@ -38,7 +39,7 @@ export default function Footer() {
         {/* Brand col */}
         <div className={styles.brand}>
           <Link href="/" className={styles.logo} id="footer-logo">
-            <Image src="/logo.svg" alt="StyleOrder Logo" width={160} height={40} priority style={{ height: 'auto' }} />
+            <Image src="/logo-gold.svg" alt="StyleOrder Logo" width={160} height={40} priority style={{ width: '160px', height: 'auto' }} />
           </Link>
           <p className={styles.tagline}>
             Tu moda personalizada, a tu medida. Calidad premium, entrega puntual.
@@ -54,7 +55,7 @@ export default function Footer() {
                 aria-label={s.label}
                 id={`footer-social-${s.label.toLowerCase()}`}
               >
-                {s.icon}
+                <s.Icon size={18} />
               </a>
             ))}
           </div>
@@ -87,7 +88,7 @@ export default function Footer() {
       <div className={styles.bottomBar}>
         <div className={styles.bottomInner}>
           <p className={styles.copy}>© {currentYear} StyleOrder. Todos los derechos reservados.</p>
-          <p className={styles.copy}>Hecho con ✦ para nuestros clientes</p>
+          <p className={styles.copy}>Hecho con <SparkleIcon size={13} style={{ verticalAlign: '-2px', color: 'var(--color-primary)' }} /> para nuestros clientes</p>
         </div>
       </div>
     </footer>

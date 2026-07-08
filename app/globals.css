@@ -2,46 +2,49 @@
    SISTEMA DE DISEÑO GLOBAL — Variables CSS
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* === PALETA DE COLORES === */
-  --color-primary: #6C3BFF;
-  --color-primary-light: #8B63FF;
-  --color-primary-dark: #4A1FCC;
-  --color-primary-glow: rgba(108, 59, 255, 0.3);
+  /* === PALETA DE COLORES (Marca ÉS — vino, oro y crema) === */
+  --color-primary: #D9B56E;          /* Oro */
+  --color-primary-light: #E8CB8E;
+  --color-primary-dark: #C29A4E;
+  --color-primary-glow: rgba(217, 181, 110, 0.28);
 
-  --color-accent: #FF6B35;
-  --color-accent-light: #FF8C5A;
-  --color-accent-dark: #E04F1A;
+  --color-accent: #F5EBDD;           /* Crema */
+  --color-accent-light: #FFF7EC;
+  --color-accent-dark: #E4D4BF;
 
-  --color-success: #22C55E;
-  --color-warning: #F59E0B;
-  --color-error: #EF4444;
-  --color-info: #3B82F6;
+  --color-wine: #542240;             /* Ciruela intermedia */
+  --color-wine-deep: #3B1F2E;        /* Vino profundo (marca) */
 
-  /* === FONDO Y SUPERFICIES (Dark Mode) === */
-  --bg-base: #0A0A0F;
-  --bg-surface: #13131A;
-  --bg-card: #1A1A24;
-  --bg-card-hover: #21212E;
-  --bg-elevated: #22222F;
-  --bg-overlay: rgba(10, 10, 15, 0.85);
+  --color-success: #4FA97A;
+  --color-warning: #D9A441;
+  --color-error: #C75B5B;
+  --color-info: #6E8BB5;
+
+  /* === FONDO Y SUPERFICIES (Dark Mode vino) === */
+  --bg-base: #170B11;
+  --bg-surface: #201019;
+  --bg-card: #2B1622;
+  --bg-card-hover: #371D2C;
+  --bg-elevated: #3B1F2E;
+  --bg-overlay: rgba(23, 11, 17, 0.85);
 
   /* === TEXTO === */
-  --text-primary: #F0F0F8;
-  --text-secondary: #A0A0B8;
-  --text-muted: #606078;
-  --text-inverse: #0A0A0F;
+  --text-primary: #F5EBDD;
+  --text-secondary: #C9B5A6;
+  --text-muted: #8C7566;
+  --text-inverse: #3B1F2E;
 
   /* === BORDES === */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --border-primary: rgba(108, 59, 255, 0.4);
+  --border-subtle: rgba(217, 181, 110, 0.08);
+  --border-default: rgba(217, 181, 110, 0.16);
+  --border-strong: rgba(217, 181, 110, 0.30);
+  --border-primary: rgba(217, 181, 110, 0.45);
 
   /* === TIPOGRAFÍA === */
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Cormorant Garamond', 'Outfit', serif;
   --font-body: 'Inter', sans-serif;
 
   --text-xs: 0.75rem;
@@ -82,7 +85,7 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
   --shadow-glow: 0 0 40px var(--color-primary-glow);
-  --shadow-glow-accent: 0 0 40px rgba(255, 107, 53, 0.25);
+  --shadow-glow-accent: 0 0 40px rgba(245, 235, 221, 0.18);
 
   /* === TRANSICIONES === */
   --transition-fast: 150ms ease;
@@ -91,23 +94,24 @@
   --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* === GLASSMORPHISM === */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(245, 235, 221, 0.03);
+  --glass-border: rgba(217, 181, 110, 0.12);
   --glass-blur: blur(20px);
 
   /* === GRADIENTES === */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), #B06FFF);
-  --gradient-accent: linear-gradient(135deg, var(--color-accent), #FF9F68);
-  --gradient-hero: linear-gradient(135deg, #0A0A0F 0%, #13131A 50%, #1A1224 100%);
-  --gradient-card: linear-gradient(135deg, rgba(108,59,255,0.08), rgba(176,111,255,0.04));
+  --gradient-primary: linear-gradient(135deg, #D9B56E, #EBCF95);
+  --gradient-accent: linear-gradient(135deg, #F5EBDD, #E4D4BF);
+  --gradient-hero: linear-gradient(160deg, #170B11 0%, #251320 45%, #3B1F2E 100%);
+  --gradient-card: linear-gradient(135deg, rgba(217,181,110,0.10), rgba(84,34,64,0.06));
+  --gradient-wine: linear-gradient(135deg, #542240, #3B1F2E);
 
   /* === ESTADOS DE PEDIDO === */
-  --status-pending: #F59E0B;
-  --status-design: #3B82F6;
-  --status-delivered: #22C55E;
-  --status-cancelled: #EF4444;
-  --status-partial: #8B5CF6;
-  --status-shipping: #06B6D4;
+  --status-pending: #D9A441;
+  --status-design: #6E8BB5;
+  --status-delivered: #4FA97A;
+  --status-cancelled: #C75B5B;
+  --status-partial: #B07BA0;
+  --status-shipping: #5FA6A8;
 }
 
 /* ============================================================
@@ -137,8 +141,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
   color: var(--text-primary);
 }
 
@@ -222,7 +227,9 @@ input, textarea, select {
 
 .btn--primary {
   background: var(--gradient-primary);
-  color: #fff;
+  color: var(--text-inverse);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   box-shadow: 0 4px 20px var(--color-primary-glow);
 }
 
@@ -238,24 +245,25 @@ input, textarea, select {
 .btn--outline {
   background: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-strong);
 }
 
 .btn--outline:hover {
   border-color: var(--color-primary);
-  color: var(--color-primary-light);
-  background: rgba(108,59,255,0.06);
+  color: var(--color-primary);
+  background: rgba(217,181,110,0.08);
 }
 
 .btn--accent {
   background: var(--gradient-accent);
-  color: #fff;
+  color: var(--color-wine-deep);
+  font-weight: 700;
   box-shadow: var(--shadow-glow-accent);
 }
 
 .btn--accent:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255,107,53,0.4);
+  box-shadow: 0 8px 30px rgba(245,235,221,0.28);
 }
 
 .btn--ghost {

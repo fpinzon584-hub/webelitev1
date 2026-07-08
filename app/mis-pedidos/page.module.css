@@ -15,7 +15,15 @@
 }
 
 .icon {
-  font-size: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-xl);
+  background: rgba(217, 181, 110, 0.10);
+  border: 1px solid var(--border-primary);
+  color: var(--color-primary);
   animation: float 3s ease-in-out infinite;
 }
 

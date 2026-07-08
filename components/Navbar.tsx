@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className={styles.container}>
         {/* Logo */}
         <Link href="/" className={styles.logo} id="navbar-logo">
-          <Image src="/logo.svg" alt="StyleOrder Logo" width={160} height={40} priority style={{ height: 'auto' }} />
+          <Image src="/logo-gold.svg" alt="StyleOrder Logo" width={160} height={40} priority style={{ width: '160px', height: 'auto' }} />
         </Link>
 
         {/* Desktop Nav */}

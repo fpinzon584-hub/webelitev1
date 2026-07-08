@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import styles from './page.module.css'
+import { TargetIcon, DiamondIcon, HandshakeIcon, SparkleIcon, SpotlightIcon } from '@/components/Icons'
 
 export const metadata: Metadata = {
   title: 'Acerca de Nosotros',
@@ -7,17 +8,17 @@ export const metadata: Metadata = {
 }
 
 const values = [
-  { icon: '🎯', title: 'Precisión', desc: 'Cada detalle importa. Desde la talla hasta el acabado final, trabajamos con exactitud.' },
-  { icon: '💎', title: 'Calidad Premium', desc: 'Usamos materiales de primera calidad para garantizar que cada pieza dure y se vea increíble.' },
-  { icon: '🤝', title: 'Compromiso', desc: 'Tu satisfacción es nuestra prioridad. Cumplimos con fechas y expectativas, siempre.' },
-  { icon: '✨', title: 'Creatividad', desc: 'Transformamos tus ideas en prendas únicas. Sin límites para tu imaginación.' },
+  { Icon: TargetIcon, title: 'Precisión', desc: 'Cada detalle importa. Desde la talla hasta el acabado final, trabajamos con exactitud.' },
+  { Icon: DiamondIcon, title: 'Calidad Premium', desc: 'Usamos materiales de primera calidad para garantizar que cada pieza dure y se vea increíble.' },
+  { Icon: HandshakeIcon, title: 'Compromiso', desc: 'Tu satisfacción es nuestra prioridad. Cumplimos con fechas y expectativas, siempre.' },
+  { Icon: SparkleIcon, title: 'Creatividad', desc: 'Transformamos tus ideas en prendas únicas. Sin límites para tu imaginación.' },
 ]
 
 const team = [
-  { name: 'Sofía Martínez', role: 'Fundadora & Directora de Diseño', initial: 'S', color: '#6C3BFF' },
-  { name: 'Andrés Vargas', role: 'Producción & Calidad', initial: 'A', color: '#FF6B35' },
-  { name: 'Laura Herrera', role: 'Atención al Cliente', initial: 'L', color: '#22C55E' },
-  { name: 'Miguel Torres', role: 'Logística & Entregas', initial: 'M', color: '#3B82F6' },
+  { name: 'Sofía Martínez', role: 'Fundadora & Directora de Diseño', initial: 'S', color: '#D9B56E' },
+  { name: 'Andrés Vargas', role: 'Producción & Calidad', initial: 'A', color: '#542240' },
+  { name: 'Laura Herrera', role: 'Atención al Cliente', initial: 'L', color: '#5FA6A8' },
+  { name: 'Miguel Torres', role: 'Logística & Entregas', initial: 'M', color: '#B07BA0' },
 ]
 
 const milestones = [
@@ -54,7 +55,7 @@ export default function NosotrosPage() {
         <div className="container">
           <div className={styles.missionGrid}>
             <div className={styles.missionCard}>
-              <div className={styles.missionIcon}>🎯</div>
+              <div className={styles.missionIcon}><TargetIcon size={30} /></div>
               <h2 className={styles.missionTitle}>Nuestra Misión</h2>
               <p className={styles.missionDesc}>
                 Crear prendas personalizadas de alta calidad que superen las expectativas de 
@@ -62,7 +63,7 @@ export default function NosotrosPage() {
               </p>
             </div>
             <div className={styles.missionCard}>
-              <div className={styles.missionIcon}>🌟</div>
+              <div className={styles.missionIcon}><SpotlightIcon size={30} /></div>
               <h2 className={styles.missionTitle}>Nuestra Visión</h2>
               <p className={styles.missionDesc}>
                 Ser el referente de moda personalizada en la región, donde cada cliente se 
@@ -83,7 +84,7 @@ export default function NosotrosPage() {
           <div className={styles.valuesGrid}>
             {values.map((v, i) => (
               <div key={i} className={styles.valueCard}>
-                <span className={styles.valueIcon}>{v.icon}</span>
+                <span className={styles.valueIcon}><v.Icon size={26} /></span>
                 <h3 className={styles.valueTitle}>{v.title}</h3>
                 <p className={styles.valueDesc}>{v.desc}</p>
               </div>

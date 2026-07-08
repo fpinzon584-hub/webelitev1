@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { RulerIcon, SparkleIcon } from '@/components/Icons'
 
 export const metadata: Metadata = {
   title: 'Catálogo — Entrega Inmediata',
@@ -20,11 +21,11 @@ const products = [
     price: 35000,
     originalPrice: 45000,
     sizes: ['S', 'M', 'L', 'XL'],
-    colors: ['#1A1A24', '#6C3BFF', '#FF6B35'],
+    colors: ['#3B1F2E', '#D9B56E', '#542240'],
     description: 'Corte oversize de algodón premium 100%. Suave, duradera y con acabado impecable.',
     badge: 'Más vendido',
     initial: 'C',
-    color: '#6C3BFF',
+    color: '#D9B56E',
   },
   {
     id: '2',
@@ -33,11 +34,11 @@ const products = [
     price: 75000,
     originalPrice: null,
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    colors: ['#333344', '#22C55E'],
+    colors: ['#2B1622', '#5FA6A8'],
     description: 'Interior afelpado para máximo confort. Capucha ajustable y bolsillo canguro.',
     badge: 'Nuevo',
     initial: 'S',
-    color: '#22C55E',
+    color: '#5FA6A8',
   },
   {
     id: '3',
@@ -46,11 +47,11 @@ const products = [
     price: 89000,
     originalPrice: 110000,
     sizes: ['S', 'M', 'L'],
-    colors: ['#4A4A5A', '#8B6914'],
+    colors: ['#4A2839', '#C29A4E'],
     description: 'Múltiples bolsillos funcionales. Tela resistente y cómoda para el día a día.',
     badge: null,
     initial: 'P',
-    color: '#FF6B35',
+    color: '#542240',
   },
   {
     id: '4',
@@ -59,11 +60,11 @@ const products = [
     price: 28000,
     originalPrice: null,
     sizes: ['Única'],
-    colors: ['#0A0A0F', '#6C3BFF', '#EF4444'],
+    colors: ['#170B11', '#B07BA0', '#C75B5B'],
     description: 'Correa ajustable snap. Visera pre-curvada. Disponible en múltiples colores.',
     badge: 'Popular',
     initial: 'G',
-    color: '#3B82F6',
+    color: '#B07BA0',
   },
   {
     id: '5',
@@ -72,11 +73,11 @@ const products = [
     price: 42000,
     originalPrice: null,
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    colors: ['#F0F0F8', '#1A1A24'],
+    colors: ['#F5EBDD', '#3B1F2E'],
     description: 'Estampado de alta definición, resistente al lavado. Diseños exclusivos cada temporada.',
     badge: 'Exclusivo',
     initial: 'E',
-    color: '#8B5CF6',
+    color: '#C29A4E',
   },
   {
     id: '6',
@@ -85,11 +86,11 @@ const products = [
     price: 95000,
     originalPrice: 120000,
     sizes: ['M', 'L', 'XL', 'XXL'],
-    colors: ['#1A1A24', '#4A4A5A'],
+    colors: ['#2B1622', '#542240'],
     description: 'Cierre frontal de alta calidad. Bolsillos con cremallera. Tejido técnico de 3 capas.',
     badge: null,
     initial: 'H',
-    color: '#F59E0B',
+    color: '#D9B56E',
   },
 ]
 
@@ -149,7 +150,7 @@ export default function CatalogoPage() {
           <div className={styles.sizeGuideBar}>
             <span>¿No sabes tu talla?</span>
             <button className="btn btn--outline btn--sm" id="size-guide-btn">
-              📏 Ver Guía de Tallas
+              <RulerIcon size={16} /> Ver Guía de Tallas
             </button>
           </div>
         </div>
@@ -218,7 +219,7 @@ export default function CatalogoPage() {
                       className="btn btn--primary btn--sm"
                       id={`product-cta-${product.id}`}
                     >
-                      Quiero este ✦
+                      Quiero este <SparkleIcon size={15} />
                     </Link>
                   </div>
                 </div>

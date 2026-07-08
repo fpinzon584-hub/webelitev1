@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { PackageIcon, ArrowLeftIcon } from '@/components/Icons'
 
 export const metadata: Metadata = {
   title: 'Mis Pedidos — Panel de Cliente',
@@ -12,7 +13,7 @@ export default function MisPedidosPage() {
     <div className={styles.page}>
       <div className="container">
         <div className={styles.comingSoon}>
-          <div className={styles.icon}>📦</div>
+          <div className={styles.icon}><PackageIcon size={40} /></div>
           <h1 className={styles.title}>Mis Pedidos</h1>
           <p className={styles.desc}>
             Aquí podrás ver el estado de todos tus pedidos en tiempo real.
@@ -25,7 +26,7 @@ export default function MisPedidosPage() {
             <span className="status-badge status-badge--delivered">Entregado</span>
           </div>
           <Link href="/" className="btn btn--primary">
-            ← Volver al Inicio
+            <ArrowLeftIcon size={17} /> Volver al Inicio
           </Link>
         </div>
       </div>

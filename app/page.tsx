@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './page.module.css'
+import {
+  CameraIcon, RulerIcon, SearchIcon, CardIcon,
+  SparkleIcon, ArrowRightIcon, StarIcon,
+} from '@/components/Icons'
 
 export const metadata: Metadata = {
   title: 'StyleOrder — Tu Moda Personalizada',
@@ -9,22 +13,22 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    icon: '📸',
+    Icon: CameraIcon,
     title: 'Sube tu Referencia',
     desc: 'Adjunta la foto del diseño que deseas. Lo hacemos realidad.',
   },
   {
-    icon: '📏',
+    Icon: RulerIcon,
     title: 'Tallas Exactas',
     desc: 'Selecciona tu talla o envíanos tus medidas para un ajuste perfecto.',
   },
   {
-    icon: '🔍',
+    Icon: SearchIcon,
     title: 'Seguimiento en Tiempo Real',
     desc: 'Revisa el estado de tu pedido: diseño, producción, envío y entrega.',
   },
   {
-    icon: '💳',
+    Icon: CardIcon,
     title: 'Pagos Flexibles',
     desc: 'Abona o cancela tu pedido. Transparencia total en cada transacción.',
   },
@@ -73,7 +77,7 @@ export default function HomePage() {
 
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroBadge}>
-            <span>✦</span> Pedidos Personalizados con Seguimiento en Tiempo Real
+            <SparkleIcon size={15} /> Pedidos Personalizados con Seguimiento en Tiempo Real
           </div>
 
           <h1 className={styles.heroTitle}>
@@ -88,7 +92,7 @@ export default function HomePage() {
 
           <div className={styles.heroCtas}>
             <Link href="/pedido" className="btn btn--primary btn--lg" id="hero-cta-pedido">
-              <span>✦</span> Hacer mi Pedido
+              <SparkleIcon size={17} /> Hacer mi Pedido
             </Link>
             <Link href="/catalogo" className="btn btn--outline btn--lg" id="hero-cta-catalogo">
               Ver Catálogo
@@ -129,7 +133,7 @@ export default function HomePage() {
           <div className={styles.featuresGrid}>
             {features.map((f, i) => (
               <div key={i} className={styles.featureCard} style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className={styles.featureIcon}>{f.icon}</div>
+                <div className={styles.featureIcon}><f.Icon size={26} /></div>
                 <h3 className={styles.featureTitle}>{f.title}</h3>
                 <p className={styles.featureDesc}>{f.desc}</p>
               </div>
@@ -177,7 +181,7 @@ export default function HomePage() {
               con tallas disponibles y llévalo hoy mismo.
             </p>
             <Link href="/catalogo" className="btn btn--accent btn--lg" id="cta-catalogo">
-              Explorar Catálogo →
+              Explorar Catálogo <ArrowRightIcon size={18} />
             </Link>
           </div>
         </div>
@@ -194,7 +198,11 @@ export default function HomePage() {
           <div className={styles.testimonialsGrid}>
             {testimonials.map((t, i) => (
               <div key={i} className={styles.testimonialCard}>
-                <div className={styles.stars}>{'★'.repeat(t.stars)}</div>
+                <div className={styles.stars}>
+                  {Array.from({ length: t.stars }).map((_, s) => (
+                    <StarIcon key={s} size={16} />
+                  ))}
+                </div>
                 <p className={styles.testimonialComment}>"{t.comment}"</p>
                 <div className={styles.testimonialAuthor}>
                   <div className={styles.authorAvatar}>{t.name.charAt(0)}</div>
@@ -220,7 +228,7 @@ export default function HomePage() {
               Únete a más de 500 clientes satisfechos. Empieza hoy mismo.
             </p>
             <Link href="/pedido" className="btn btn--primary btn--lg" id="final-cta-button">
-              Comenzar mi Pedido ✦
+              Comenzar mi Pedido <SparkleIcon size={17} />
             </Link>
           </div>
         </div>
